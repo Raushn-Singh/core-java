@@ -1,0 +1,6 @@
+what is inheritance 
+in java inheritance is used for code reusability.if one class access the method and variable of another class by using extends keyword then this is called inheritance it represents IS-A Relation. 
+
+for example : Child class ne Parent class ke show() method ko inherit kiya.
+
+Ab Child class ke object se show() aur display() dono access hoga.
