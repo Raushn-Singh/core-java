@@ -1,0 +1,16 @@
+List
+----
+--> List was introduced in jdk1. Version
+--> it is a child interface to Collection interface
+--> it is indexed based, it able to arrange all the elements as per the elements as per indexing , where index values starts from 0 and upto size-1
+--> List is able to allow duplicate elements.
+--> it is following Insertion order
+--> it does not following sorting order 
+--> it allow Heterogeneous element
+--> it allow null element in any number
+
+
+
+
+
+

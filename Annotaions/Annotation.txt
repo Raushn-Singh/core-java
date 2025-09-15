@@ -1,0 +1,246 @@
+ Annotation
+ Annotation is a java features introduced in jdk1.5 version it can be used to provide metadata or description in java application
+
+ Q) In java application we have already comments  to provide the description then what is the requirements to use the Annotation in java applications?
+ --------------------------------------------------------------------------------------
+ Ans:
+ ---
+ 1.
+ Comments scope is upto .java file
+ Annotation scope is upto .java,.class and upto runtime
+ 2.
+ we are unable to access comments and its description programmatically.
+ we are able to access annotations and its metadata programmatically.
+
+ Q) to provide description at runtime of our application we have XML documents then what is the requirement to use annotations ?
+ ----------------------------------------------------------------------------------
+ Ans:
+ ----
+ XML Drawbacks :
+ 1. we must know XML tech
+ 2. Every time we have to check whether XML documents are located at proper locations or not.
+ 3. Every time we have to check whether XML documents is in well formed format or not.
+ 4. Every time we have to check whether we are using right parsing mechanism or not to read data from XML documents
+
+ To Overcome these Problem we need a java alternative that is annotations
+
+ Note : In java / J2EE applications , we are using annotations as replacement for XML
+ documents.
+
+ XML based technologies                        Annotation based technologies
+ ----------------------                        -----------------------------
+ 1. Upto JDK 1.4  ----------------------------> JDK1.5 and above
+ 2. JDBC3.x ---------------------------------->JDBC 4.x
+ 3. Servlets2.5 ------------------------------>Servlet 3.x
+ 4. Struts 1.x -------------------------------> Struts2.X
+ 5. JSF 1.x ----------------------------------->JSF2.x
+ 6. EJBs 2.x ---------------------------------->EJBs 3.X
+ 7. Spring 2.4 -------------------------------->Spring 2.5
+
+ Syntax
+ ------
+ 1. declaration Syntax
+ @interface AnnotationName
+ {
+     dataType memberName()[default value];
+ }
+
+ EX:
+ ---
+ @interface Bank
+ {
+  String bid() default "B-111";
+  String bname() default "ICICI Bank"
+  ------
+ }
+
+ 2. Utilization Syntax
+ ---------------------
+ @AnnotationName(member1=val1, member2=val2, member3=val3,--------member-n=val-n)
+ 
+ @Bank(bid="B-222", bname="HDFC Bank")
+ public class Account {
+  String accNo;
+  String accHolderName;
+  String accType;
+  int balance;
+ }
+
+ 1. in java all annotations are byDefault interfaces
+ 2. in java , for all the annotations there is a common and default super interface that is "java.lang.annotation.Annotation"
+
+ on the basis of annotation member there are three type of annotation
+ 1. Marker Annotation       // marker interface--> not have any abstract method
+ -----------------------------
+ it does not include members
+ Ex :
+ ------
+ @Override
+ 2. Single member Annotation
+ ----------------------------
+ it include exactly one member
+ EX : @SuppressWarning(value = "unchecked")
+
+ 3. Multi member Annotation
+ --------------------------
+ it includes more than one member
+ EX:
+ ----
+ @Table(name="emp1",mutable="true")
+ @RequestMapping(value="/reg",method=RequestMethod.POST)
+ @ManyToMany(name="Employee",table="emp1",joinColumn="EID",joinTable="Emp_Acc")
+
+ in java annotation are divided into two types
+ 1.Standard annotations
+ ----------------------
+ these annotation are defined by java programming language
+  1.General purpose Annotations
+  -----------------------------
+  @Override 
+  @Deprecated
+  @SuppressWarnings
+  @FunctionalInterface
+  Note:
+  ----
+  these annotations are provided by java in java.lang package
+
+ 2.Meta Annotations
+ ------------------
+ Annotations which are used to define other annotations
+ 1.@Inherited
+ 2.@documented
+ 3.@Target
+ 4.@Retention
+ Note:
+ -----
+ java has provided meta annotations in java.lang.annotation
+
+2. user defined Annotation
+--------------------------
+
+
+
+@Override
+---------
+
+@Deprecated
+-----------
+
+@SuppressWarnings
+-----------------
+
+@FunctionalInterface
+--------------------
+
+@Inherited
+-------------
+
+
+@Persistable
+Class Employee{
+    String eid;
+    String ename;
+    void getEmpDetails(){
+
+    }
+}
+
+class manager extends Employee{
+    String qual;
+    float salary;
+    public void getManagerDetails(){
+
+    }
+}
+
+
+Note : only employee is Persistable , manager is not Persistable
+
+
+@Inherited
+@interface Persistable{
+
+}
+
+@Persistable
+Class Employee{
+    String eid;
+    String ename;
+    void getEmpDetails(){
+
+    }
+}
+
+class manager extends Employee{
+    String qual;
+    float salary;
+    public void getManagerDetails(){
+
+    }
+}
+
+Note : Both Employee and manager are Persistable
+
+
+@Documented
+-------------
+
+
+javadoc
+
+
+@Persistable
+public class Employee{
+    --Variables and methods-----
+}
+
+D:\apps> javadoc Employee.java
+Class name:Employee
+Variables : eid,ename,esal,....
+methods : getEid,getEname,....
+
+
+@Documented
+@interface Persistable{
+
+}
+
+@Persistable
+public class Employee{
+    --Variables and methods-----
+}
+
+D:\apps> javadoc Employee.java
+Class name:Employee
+Variables : eid,ename,esal,....
+methods : getEid,getEname,....
+Annotations: @Persistable
+
+@Target
+-------
+
+@Target(ElementType.FIELD,ElementType.METHOD,ElementType.CONSTRUCTOR)
+@interface Persistable{
+
+}
+
+
+@Retention
+----------
+
+@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.CLASS)
+@interface Persistable{
+
+}
+
+
+USER DEFINED ANNOTATION
+-----------------------
+these annotation are defined by the developers as per their application requirements.
+
+
+1. Declare user defined annotation
+2. Utilize User Defined Annotations in Java applications.
+3. get data from user defined Annotations

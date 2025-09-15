@@ -1,0 +1,169 @@
+Collection
+----------
+Collection is an object it able to manage a group of objects as single entity.
+
+To represent all Collection objects java has provided set of predefined classes and interfaces called as "Collection Framework"
+
+java has Provided all classes and interfaces which are related to Collection Framework in the form of "java.util" package
+
+
+Q) To represent a group of elements we have already Arrays then what is the requirements to use Collections ?
+-----------------------------
+Ans:
+----
+1. Arrays are existed in fixed size nature , Arrays are able to allow the elements upto its size, if we provide any element over its size then jvm will raise an Exception like java.lang.ArrayIndexOutOfBoundsException
+
+Ex:
+----
+Student[] std=new Student[3];
+std[0]=new Student();
+std[1]=new Student();
+std[2]=new Student();
+std[3]=new Student();--> java.lang.ArrayIndexOutOfBoundsException
+
+
+Collections are existed in Dynamically Growable Nature , Even if we add any element over its size then jvm will not raise any Exception
+
+Ex:
+---
+ArrayList al=new ArrayList(3);
+al.add(new Student());
+al.add(new Student());
+al.add(new Student());
+al.add(new Student());
+al.add(new Student()); -->No Exception
+
+2. Arrays are able to allow Homogeneous elements . if we add any element which is not in the array type then compiler will raise an error like "Incompatible Types Error".
+Ex:
+------
+Student[] std=new Student[3];
+std[0]=new Student();
+std[1]=new Employee(); -->Error : Incompatible Types.
+std[1]=new Customer(); --> Error : Incompatible Types
+
+Collection are able to allow Heterogeneous elements.
+Ex:
+---
+ArrayList al=new ArrayList();
+al.add(new Student());
+al.add(new Employee());
+al.add(new Customer());
+
+3. In the case of Arrays, no predefined library is existed to get all the elements in sorting or in searching , to perform and searching operations over the array elements we have to write logic explicitly.
+Ex:
+---
+String[] str={"AAA","FFF","BBB","EEE","CCC","DDD"};
+---- Logic To perform sorting ----
+
+in the case of collections, predefined library is existed to perform sorting and searching operations.
+TreeSet ts=new TreeSet();
+ts.add("AAA");
+ts.add("FFF");
+ts.add("BBB");
+ts.add("EEE");
+ts.add("CCC");
+ts.add("DDD");
+System.ou.println(ts);
+op:["AAA","BBB","CCC","DDD","EEE","FFF"]
+
+4. Arrays are not flexible to use in java applications.
+Collections are very much flexible to use in javaApplications
+
+5. Arrays are able to provide better performance in java applications .
+collections are not providing very good performance to the java applications.
+6. Arrays are less api dependent.
+Collection are more api dependent.
+
+7. Arrays are able to improve typed ness in java applications.
+Collections are able to reduce typed ness in java applications.
+
+Q) What are the main interfaces and classes in collections Framework ?
+Ans:
+---
+
+Q) What is the difference between Collection and Map?
+Ans:
+----
+Collection is able to store all the elements individually as a single entity.
+Map is able to store all the elements in the form of Key-Value pairs.
+
+Q) What are the differences between List and Set ?
+---------------------
+Ans:
+----
+1. List is index based , it able to arrange all the elements as per indexing
+set is not index based , it able to arrange all the elements as per elements hashcode Values
+
+2. List is able to allow duplicate element
+set is not allowing duplicate elements.
+3.List is able to follow Insertion order.
+Set is not following Insertion order
+
+4.List is able to allow any no of null elements
+Set is able to allow only one null element
+Note : SortedSet , NavigableSet and TreeSet are not allowing even single null element
+
+5.No element in list is following sorting order.
+In Set, TreeSet, SortedSet and NavigableSet is following Sorting Order. 
+
+6. All implementation of List are allowing Heterogeneous elements.
+In Set,TreeSet, NavigableSet and SortedSet are allowing only Homogeneous elements
+----------------------------
+
+Collection 
+-----------
+--> It was introduced in java along with its JDK1.2 Version.
+--> it able to represent a group of element as single 
+--> it is root interface to all the Collection implementations
+
+Methods:
+--------
+1. public boolean add(Object obj)
+--> it will add add the specified element to the Collection object.
+--> it will return true Value when the element is added.
+--> it will return false value when the element is not added.
+
+2.public boolean addAll(Collection c)
+--> it able to add all the elements of the specified Collection to the present Collection object.
+-->it will return true value when it add atleast one element
+--> it will return false value when it add no elements
+-->it will return false value when it add no elements
+
+3. public boolean remove(Object element)
+--> it will remove the specified element from the collections
+--> it will return true value when the element is removed.
+--> it will return false value when the element is not removed or when the element is not existed in the Collection to remove
+
+4. public boolean removeAll(Collection c)
+--> it will remove all the elements of the specified the Collection from the present Collection
+--> it will return true value when it remove atleast one element
+--> it will return false value when no element is removed from Collection
+
+5. public boolean contains(Object obj)
+-->it will check whether the specified element is existed or not  in the present Collection object
+--> it will return true value when the specified element is existed
+--> it will return false value when the specified element is not existed
+
+6.public boolean containsAll(Collection c)
+-->it will check whether all the element of the specified Collection are existed or not in the present Collection
+--> it will return value when all the elements are existed
+--> it wil return false value when atleast one element is not existed
+
+7.public boolean retainAll(Collection c)
+--> it will remove all the element from the present Collection object except the elements which are existed in the specified Collection Object.
+-->it will return true value when it remove atleast one element
+--> it will return false value when no element is returned from the present List
+
+8. public int size()
+--> it will represent an integer value representing no of elements in Collection
+
+9. public Object[] toArray()
+--> it will convert all the elements from Collection to Object[]
+
+10. public boolean isEmpty()
+--> it will check whether the collection Object is empty or not
+--> it will return true when Collection object is empty
+--> it will return false value when Collection object is not empty
+
+11. public void clear()
+--> it will remove all the element from Collection

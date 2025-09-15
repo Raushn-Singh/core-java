@@ -1,0 +1,85 @@
+1. Introduction
+Q) What is the difference between process,procedure,processor?
+Ans:
+---
+Process : flow of execution to perform a particular task.
+procedure : set of instructions to represent a particular task.
+processor : H/W component to generate processes
+
+
+1. Single process mechanism or single process Tasking
+-----------------------------------------------------
+it allows only one process mechanism or single Tasking
+
+DrawBack
+--------
+1. allows only one process to execute the complete applications
+2. allows to load and execute only one task at a time 
+3. it follows Sequential execution
+4. it will increase applications execution time
+5. it will reduce applications performance
+6. we are able to utilize System resources effectively
+
+2. Multi Process mechanism or multi Tasking
+-------------------------------------------
+it allows more than one process to execute applications
+
+1. Allows more than one process to execute the complete applications
+2. Allows to load more than one  task at a time
+3. it follows parallel execution
+4. it will reduce application execution time
+5. it will increase application performance 
+6. we are unable to utilize System resources effectively
+
+
+Context-switching
+
+1. Heavy weight context-switching
+---------------------------------
+it is the context switching between two heavy weight components. 
+Ex :
+---- 
+Context switching between two processes
+1. it will increase execution time 
+2. it will take more memory
+3. it will reduce application performance
+
+
+2.Light weight context-switching
+--------------------------------
+1. it is the context switching between two light weight components.
+Ex:
+----
+Context switching between two Threads.
+1. it will reduce application execution time 
+2. it will increase application performance
+3. it will take less memory .
+
+Q) what is difference between Process and thread ?
+Ans:
+----
+Process is heavy weight , it will take more memory execution time and more memory and it will reduce application performance.
+Thread is light weight it will take less memory and less execution time and it will improve application performance
+
+
+
+
+2. Threads Design
+-----------------
+
+
+
+3. Thread lifeCycle
+---------------------
+4. Thread Class library
+-----------------------
+
+5. Synchronization
+------------------
+6. Inter thread Communication
+-----------------------------
+
+7. Deadlocks
+--------------
+8. Thread local
+---------------

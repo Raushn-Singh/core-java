@@ -1,0 +1,4 @@
+in byte stream data will be transferred in the form of bytes and lengths of each data packets is of 1 byte.
+InputStream => FileInputStream  read() 
+
+OutputStream => FileOutputStream  write()
