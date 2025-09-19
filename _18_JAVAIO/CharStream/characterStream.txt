@@ -1,0 +1,12 @@
+
+
+
+abstract class
+reader class   ==> FileReader
+                   read() --> the return type of is int, read method returns the  ASCII values of the characters which are present in the file . if there are no characters present in the file then read() methods return -1
+
+
+writer class  ==> FileWriter
+                      write()
+                         |-->int
+                         |-->String

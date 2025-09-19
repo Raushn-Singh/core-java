@@ -1,0 +1,20 @@
+Stack:
+------
+---> it was introduced in JDK1.0 Version
+---> It is Legacy Collection.
+---> it able to manage all the elements as per the LIFO[Last in First]
+---> it is child class to Vector.
+
+methods:
+---------
+1.public void push(Object element)
+--> it can be used to insert the specified element to stack.
+ 
+2.public Object pop()
+--> it can be used to remove but not remove top of the element
+
+3.public Object peek()
+--> it can be used to return but not remove top of the element
+
+4. public int search(Object element)
+--> it can be used to get position of specified element in Stack, if the specified element is not existed then search() method will return -1 value

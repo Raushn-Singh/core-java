@@ -1,4 +1,8 @@
 in byte stream data will be transferred in the form of bytes and lengths of each data packets is of 1 byte.
-InputStream => FileInputStream  read() 
+
+InputStream => FileInputStream  read() --> the return type of is int, read method returns the  ASCII values of the characters which are present in the file . if there are no characters present in the file then read() methods return -1
 
 OutputStream => FileOutputStream  write()
+                                    |-- int
+                                    |-- byte array
+

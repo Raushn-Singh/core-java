@@ -9,8 +9,51 @@ List
 --> it allow Heterogeneous element
 --> it allow null element in any number
 
+Methods
+-------
+1. public void add(int index,Object element)
+--> it will add the specified element at the specified index
+--> where index value must be either last index+1 or less than last index if we provide index value greater than lastindex+1 then jvm will raise an Exception like "java.lang.ArrayIndexOutOfBoundsException 
+--> if the index value is like lastindex+1 then the specified element will be added to the list as last element
+--> if element is existed at the specified index then jvm will insert the specified element at the specified index and jvm will move the existed element to the next index
 
+2. public void addAll(int index,Collection)
+--> it will add all the elements of the specified collectionin the present List
+--> where index value must be either lastindex+1 or less than last index if we provide index value greater than lastindex+1 then jvm will raise an Exception like "java.lang.ArrayIndexOutOfBoundsException"
+--> if the index value is like lastindex+1 then the all the element will added to the list as last elements
+--> if element is existed at the specified index then jvm will insert all the elements of the specified collection at the specified index and jvm will move the existed element to the next index
 
+3. public void set(int index,Object value)
+-->it will add the specified element at the specified index
+--> if no element is existed at the specified index then jvm will raise a Exception like "java.lang.ArrayIndexOutOfBoundsException"
+--> if element is existed at the specified index then jvm will remove the existed element and jvm will add the specified element in place of removed element
 
+Q) what is the difference between add() and set() method in list?
+=-------------------------------------------------
+1. In list , add Method will perform insert operation
+   in list , set method will perform replacement operation
+
+2. in case of add() method, if no element is existed at the specified index and if the index value is like_index+1 then jvm will add the specified element as last value to List.
+in case of set() method if the element is not existed at the specified index then jvm will raise an Exception like java.lang.ArrayIndexOutOfBoundsException
+
+3. add() has void return type.
+   set() has return an element it has been removed
+
+4. public Object get(int index)
+--> it will return an element existed at the specified index.
+--> if the specified index value is in out side range of the the list indexes then jvm will raise an Exception like java.lang,ArrayIndexOutOfBoundsException
+
+5. public void remove(int index)
+--> it will remove and return an element existed at the specified index
+--> if the index value is in out side range of the list indexes then jvm will raise an Exception like "java.lang.ArrayIndexOutOfBoundsException"
+
+6. public int indexOf(Object element)
+--> it will return an index of value where the first occurence of the specified element is existed.
+--> if the specified element is not existed then indexof() method will return -1
+value.
+
+7. public int lastindexOf(Object element)
+--> it will return an index value where the last occurence of the specified element is existed.
+--> if the specified element is not existed then lastindexOf() method will return -1 value
 
 

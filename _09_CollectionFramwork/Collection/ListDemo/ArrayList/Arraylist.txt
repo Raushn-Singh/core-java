@@ -1,0 +1,33 @@
+ArrayList
+---------
+---> it was introduced in jdk1.2 Version
+---> it is not legacy Collection.
+---> it is a direct implementation class to list interface
+
+---> it is indexed based 
+---> it allow duplicate elements.
+---> it follows insertion order
+---> it does not follow sorting order.
+---> it allows Heterogeneous element
+---> it allows more than one null element
+
+---> its initial capacity is 10 elements.
+---> its internal Data structure is resizable Array
+---> its incremental capacity ratio is 
+new_Capacity=(Current_Capacity*3/2)+1
+---> it best option for our frequent retrieval operation
+
+--->it is not synchronized Collection
+---> no method is synchronized method in ArrayList
+---> it allows more than one thread at a time
+---> it allows parallel execution
+---> it will reduce execution time
+---> it increase application performance
+--->it is not giving gurantee for data consistency
+---> it is not threadsafe
+
+Constructors
+------------
+1.public ArrayList()
+2.public ArrayList(int capacity)
+3.public ArrayList(Collection c)

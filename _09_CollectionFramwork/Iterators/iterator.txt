@@ -1,0 +1,88 @@
+Iterator/Cursor in Collection Framework
+----------------------------------------
+ArrayList<String> al=new ArrayList<>()
+al.add("AAA");
+al.add("BBB");
+al.add("CCC");
+al.add("DDD");
+al.add("EEE");
+System.out.println(al)
+[AAA,BBB,CCC,DDD,EEE]
+Object : toString : ClassName@RefValue
+Collection : toString() : [E1,E2,E3,.....]
+
+in the above we are getting all the elements at a time , but we want to read the elements individually like one by one fashion , for this , we have to use "Cursor or Iterators " in Collections
+
+there are three types of cursor in Collections Framework\
+1.Enumeration :
+--------------
+--> it was introduced in JDK1.0 Version
+--> it is legacy cursor, it is applicable for only legacy Collection
+--> 
+steps :
+-------
+1. Create Enumeration object with all the elements of legacy Collection
+    public Enumeration elements()
+    Enumeration e=v.elements();
+
+2. Read element by element from Enumeration
+     public boolean hashMoreElements()
+     public Object nextElement()
+
+Drawbacks:
+---------
+1. it is applicable for only legacy Collections
+2. While Iterating elements Enumeration is able to allow only read operation , it is not allowing insert remove and replace
+3. it allow to read elements in the only forward direction , it is not allowing to read elements in backward direction.
+
+2.Iterator
+-----------
+---> it was introduced in JDK1.2 Version
+---> Iterator is applicable for all the Collections , due to this reason , Iterator is also called as universal cursor
+---> it allows read and remove operations While Iterating elements
+
+steps :
+-------
+1. Create Iterator object
+--------------------------
+public Iterator iterator()
+Iterator i=al.iterator();
+
+2.Read elements from Iterator Object
+----------------------------------
+1.public boolean hasNext()
+2.public Object next()
+3.public void remove()
+
+Drawbacks:
+---------
+1. it allow read and remove operations , it is not allowing insert and replace operations
+2, it allows to read elements in only forward direction, it is not allowing read elements in backward direction
+
+
+3.ListIterator
+---------------
+--> it was introduced in JDK1.2 Version
+--> it is applicable for only List Implementations.
+--> it allows read, remove, insert,replace operation While Iterating elements.
+--> it allow to read element in both forward direction and backward direction
+
+1. Create ListIterator Object:
+public ListIterator listIterator()
+ListIterator lit=list.listIterator()
+
+2. Read element from ListIterator:
+a) to read element in forward direction
+   public boolean hasNext()
+   public Object next()
+   public int nextIndex()
+
+b) To read element in backward direction
+   public boolean hasPrevious()
+   public Object previous()
+   public int previousIndex()
+
+c) To perform remove,insert,replace,...operation: 
+   public void remove()
+   public void add(Object obj)
+   public void set(Object obj)     

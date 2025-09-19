@@ -1,0 +1,45 @@
+Vector:
+------
+---> it was introduced in jdk1.0 Version
+---> it is legacy Collection.
+---> it is a direct implementation class to list interface
+
+---> it is indexed based 
+---> it allow duplicate elements.
+---> it follows insertion order
+---> it does not follow sorting order.
+---> it allows Heterogeneous element
+---> it allows more than one null element
+
+---> its initial capacity is 10 elements.
+---> its internal Data Structer is resizable Array
+---> its incremental capacity ratio is 
+new_Capacity=2*Current_Capacity
+---> it best option for our frequent retrival operation
+
+---> it is sysnchronized Collection
+---> majority of method are synchronized methods in Vector
+---> it allows only  one thread at a time
+---> it allows sequntial execution
+---> it will increase execution time
+---> it reduce application performance
+--->it is  giving gurantee for data consistency
+---> it is  threadsafe
+
+Constructors
+------------
+1.public Vector()
+--> it can be used to construct an empty Vector object with the default capacity 10
+2.public Vector(int capacity)
+3.public Vector(int capacity, int incremental_Ratio)
+4.public Vector(Collection c)
+
+
+methods
+-------
+public void addElement(Object element)
+public void firstElement()
+public void lastElement()
+public boolean removeElement(Object element)
+public void removeElementAt(int index)
+

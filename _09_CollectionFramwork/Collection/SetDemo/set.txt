@@ -1,0 +1,166 @@
+Set:
+----
+--> it was introduced in JDK1.2 Version
+--> it is child interface to Collection interface
+--> it is not index based , it able to store all the elements as per elements hashCode values.
+--> it is not allowing duplicate elements
+--> it is not following insertion order 
+    Note : LinkedHashSet is following insertion order
+--> it is not following sorting order
+    Note : SortedSet , NavigableSet, TreeSet is following sorting order
+--> it is allowing heterogenous elements
+    Note : SortedSet , NavigableSet, TreeSet are allowing only homogeneous elements.
+--> it allows only one null element
+
+
+HashSet:
+-------
+--> it is introduced in JDK1.2 Version
+--> it is not  legacy Collection
+--> it is direct implementation class to Set interface
+
+--> it is not index based , it able to store all the elements as per elements hashCode values.
+--> it is not allowing duplicate elements
+--> it is not following insertion order 
+--> it is not following sorting order
+--> it is allowing heterogenous elements
+--> it allows only one null element
+
+--> it internal data structure is "HashTable"
+--> its initial capacity is 16 elements
+--> its load factor/ fill ratio is 75%
+--> it is best option for our frequent search operation 
+--> it is not synchronized Collection
+--> no method is synchronized in HashSet
+--> it allows more than one thread at a time to access data
+--> it follows parallel execution
+--> it will reduce application execution time
+--> it is not giving guarantee data consistency
+--> it is not threadsafe
+
+Constructors
+------------
+1. public HashSet()
+2. public HashSet(int capacity)
+3. public HashSet(int capacity,float loadFactor)
+4. public HashSet(Collection c)
+
+LinkedHashSet :
+---------------
+Q) what are the difference between HashSet and LinkedHashSet
+------------------------------------------------------------
+Ans:
+----
+1. HashSet was introduced in JDK1.2 Version
+   LinkedHashSet was introduced in JDK1.4 Version
+
+2. HashSet is not following insertion order
+   LinkedHashSet is following insertion order
+
+3. HashSet internal data structure is "HashTable"
+   LinkedHashSet internal data structure is "HashTable+LinkedList"
+
+
+SortedSet :
+-----------
+--> it is introduced in jdk1.2 Version
+--> it is child interface to Set interface
+--> its main intention is to provide sorting order to all the elements
+--> it is not index based.
+--> it is not following insertion order
+--> it is following sorting order
+--> it is not allowing duplicate elements.
+--> it allows only homogeneous elements.
+--> it allows only Heterogeneous elements,if we provide heterogenous elements to the SortedSet then jvm will raise an exception like java.lang.ClassCastException.
+--> it does not allow null elements, if we add any null element then jvm will raise an exception like java.lang.nullPointerException
+--> it allows Comparable object byDefault , if we want to add non Comparable objects then we must use java.util.Comparator interface.
+
+methods :
+---------
+public Object first()
+public Object last()
+public Object headSet(Object obj)
+public Object tailSet(Object obj)
+public SortedSet subSet(Object startElement, Object endElement)
+
+
+NavigableSet :
+--------------
+--> it was introduced in java6 Version
+--> it is child interface to SortedSet interface , it has all the features of SortedSet , but, it has defined some of the methods for providing navigations over the elements like getting descending order of the elements order of the elements , getting ceiling elements, floor elements,...
+
+methods :
+---------
+public NavigableSet descendingSet()
+public Object ceiling(Object obj)
+public Object higher(Object obj)
+public Object floor(Object obj)
+public Object lower(Object obj)
+public Object pollFirst(Object obj)
+public Object pollLast(Object obj)
+
+
+TreeSet :
+--------
+--> it was introduced in JDK1.2 Version 
+--> it not legacy Collection
+--> it is a direct implementation class to NavigableSet,but it has provide 
+implementation for all the methods which are existed in Collection , Set, SortedSet and NavigableSet interface
+
+--> it is not index based.
+--> it is not following insertion order
+--> it is following sorting order
+--> it is not allowing duplicate elements.
+--> it allows only homogeneous elements.
+--> it allows only Heterogeneous elements,if we provide heterogenous elements to the SortedSet then jvm will raise an exception like java.lang.ClassCastException.
+--> it does not allow null elements, if we add any null element then jvm will raise an exception like java.lang.nullPointerException
+--> it allows Comparable object byDefault , if we want to add non Comparable objects then we must use java.util.Comparator interface.
+
+--> its internal Data structure is "Balanced Tree"
+--> it is not synchronized Collection
+--> No method is synchronized in TreeSet
+--> It allows more than one thread at a time to access data
+--> it follows parallel execution
+--> it reduce application exception time
+--> it is not giving guarantee for data consistency
+--> it is not threadsafe
+
+
+Constructors :
+-------------
+1. public TreeSet()
+2. public TreeSet(Comparator c)
+3. public TreeSet(SortedSet ss)
+4. public TreeSet(Collection c)
+
+
+1. Create Balanced Tree with all the element of TreeSet
+-------------------------------------------------------
+for each and every element,
+a) if the element is first element then make that element as root .
+b) if the element is first root element .
+      1.Compare present element with the element of the Balanced tree right
+        from root node by using CompareTo(--) method repeatedly
+      2. if the return value of CompareTo(--) method is negative value  then go to the left child of Balanced tree and Compare wih the left child by accessing CompareTo(--) method. if no left node is existed then make the present element as left node
+      3. if the return value of CompareTo() method is +ve value then go and compare with right child by using CompareTo()  , if no rigth child is existed then make the present element as right child to the node 
+      4. if the return value of CompareTo() method is 0 , then TreeSet will confirm the present element is duplicate element and it will discard that duplicate element     
+
+
+2. retrieve all element from Balanced tree inOrder traversing
+-------------------------------------------------------------
+left-root-right
+
+functionality of CompareTo() in Sorting class
+----------------------------------------------
+str1.CompareTo(str2)
+1. if str1 comes first when compared with str2 in dictionary order then compareTo() method will return -ve value 
+2. if str2 comes first when compared with str1 in dictionary order then compareTo method will return +ve value 
+3. if str1 and str2 are at the same position in dictionary order then  compareTo method will return 0 value
+
+String str1=new String("abc");
+String str2=new String("def);
+String str3=new String("abc");
+
+str1.compareTo(str2) ; -ve value
+str2.compareTo(str1); +ve value
+str3.compareTo(str1); 0 value

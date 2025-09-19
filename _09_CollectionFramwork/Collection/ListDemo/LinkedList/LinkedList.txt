@@ -1,0 +1,37 @@
+--> it is introduced in jdk1.2 Version.
+--> it is not legacy Collection
+--> it is an implementation class to list interface
+
+--> it is index based.
+--> it allows duplicate elements
+--> it follows insertion order
+--> it does not follow Sorting order
+--> it allows Heterogeneous elements
+--> it allows more than one null element
+
+--> it internal data structure is Double linked list
+--> in general , we will use LinkedList when we want to perform frequent insertions and deletions
+--> it is not synchronized Collection
+--> No method is synchronized in LinkedList
+--> it allows ,more  than one thread at a time access data.
+--> it follows parallel execution
+--> it will increase application performance
+--> it is not giving guarantee for data consistency.
+--> It is threadsafe
+
+
+Constructors
+-------------
+1.public LinkedList()
+2.public LinkedList(Collection c)
+
+methods
+-------
+1.public void addFirst(Object obj)
+2.public void addLast(Object obj)
+
+3.public Object getFirst()
+4.public Object getLast()
+
+5.public void removeFirst()
+6.public void removeLast()

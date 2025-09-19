@@ -1,0 +1,14 @@
+
+
+
+
+
+bufferedStreams
+
+
+1. byteStreams
+bufferedInputStream => fileinputstream
+bufferedOutputStream => fileoutputstream
+2.charstream 
+bufferedReader => fileReader
+bufferedwriter => fileWriter

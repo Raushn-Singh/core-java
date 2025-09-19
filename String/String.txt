@@ -1,0 +1,22 @@
+String Manipulations
+--------------------
+1. Introduction
+2. String Class Library
+3. StringBuffer Class Library
+4. StringBuilder 
+5. StringTokenizer
+
+1. Introduction
+---------------
+To perform String Operation JAVA has Provided a set of predefined classes
+1. java.lang.String
+2. java.lang.StringBuffer
+3. java.lang.StringBuilder
+4. java.util.StringTokenizer
+
+
+Q) What is the difference between String and StringBuffer
+--------------------------------------------------------
+Ans:
+----
+1.
