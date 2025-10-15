@@ -15,8 +15,106 @@ To perform String Operation JAVA has Provided a set of predefined classes
 4. java.util.StringTokenizer
 
 
-Q) What is the difference between String and StringBuffer
+Q) What is The difference between String and StringBuffer
 --------------------------------------------------------
-Ans:
-----
-1.
+Ans :
+-----
+1. String Class Object are immutable object they will not allow modifications on their content , if we are trying to perform modifications over the immutable object then data is allowed for modifications but the resultant modified data will not be stored back in original object and it will be stored by creating new Object 
+Note : The length of the data in immutable objects is fixed 
+
+StringBuffer class objects are mutable objects , they are able to allow modifications directly on their content.
+Note : The Length of the data in mutable object is not fixed , it is variable and it is depending on the Operation over the data which we performed
+
+
+Q) What is difference between StringBuffer and StringBuilder ?
+--------------------------------------------------------------
+Ans :
+-----
+1. StringBuffer was introduced in jdk1.0 version
+   StringBuilder was introduced in jdk1.5 version
+
+2. StringBuffer is Synchronized resource.
+   StringBuilder is not Synchronized resource.
+
+3. Majority of the methods are Synchronized methods in StringBuffer.
+   No method is Synchronized method in StringBuilder
+
+4. StringBuffer is following Sequential execution.
+   StringBuilder is following parallel execution
+
+5. StringBuffer will take more execution time.
+   StringBuilder will take less execution time.
+
+6. StringBuffer will take more execution time.
+   StringBuilder will take less execution time.
+
+7. StringBuffer will reduce application performance.
+   StringBuffer will improve application performance.
+
+8. StringBuffer will give guarantee for data Consistency
+   StringBuilder will not give guarantee for data Consistency
+
+9. StringBuffer is ThreadSafe resource.
+   StringBuilder is not ThreadSafe resource.
+
+Q) What is StringTokenization and how it is possible to perform String tokenization in java?
+----------------------------------------------------------------------
+Ans :
+-----
+The process of dividing a string into no of tokens is called as String tokenization
+to perform String tokenization in java application java has provided a predefined class in the form of java.util.StringTokenizer
+
+1. Check wether next token is existed or not from the current position.
+   public boolean hasMoreTokens()
+   --> it will return true value if next token is existed.
+   --> it will return false value when next token is not existed.
+
+2. when next Token is existed then read next token and moc=ve cursor to next position
+ public String nextToken()
+
+2. String Class Library :
+-------------------------
+
+Constructors:
+-------------
+1. public String()
+-->it can be used to create String class object with an empty content.
+EX: String str=new String()
+
+2. public String(String data)
+--> it can be used to create String class object with the specified string data.
+ Ex:
+ --
+ String str=new String("abc"); 
+
+Q) What is the difference between the following two Statements.
+String str="Raushan Singh";
+String str=new String("Raushan Singh");
+---------------------------------------------------------------
+Ans :
+-----
+1. Method Area -->Static variable and byte code of the classes
+2. Stack memory --> local variable
+3. Heap memory --> class level instance variable
+
+"abc"--> in string Constant Pool Area ---> Method Area
+
+Ans :
+-----
+String str="Raushan Singh"
+--> Here String Object will be created with  the data 'Raushan Singh' in String Constant pool area in method area, it will not allow garbage Collector to destroy these String objects.
+
+String str=new String("Durga Software Solutions");
+--> if we execute this instructions jvm will create two string objects, one is in String Constant Pool Area as per "Raushan Singh" and another one is in Heap memory as per "new" keyword, but, str variable is able to refer heap memory String Objects only
+
+3. public String(byte[] b)
+--> it can be used to create a string Object with the String Equivalent of the specified byte[]
+Ex:
+---
+byte[] b = { 65, 66, 67, 68, 69 };
+    String str3 = new String(b);
+    System.out.println(str3);
+
+4. public String(byte[] b, int start_index, int No_Of_Characters)
+-->
+
