@@ -1,4 +1,3 @@
-
 # Java 8 Functional Interface & Lambda Expressions
 
 ## 1. Functional Interface
@@ -6,8 +5,8 @@
 A **Functional Interface** is an interface that contains **only one abstract method**.  
 It can also have:
 
-- N default methods  
-- N static methods  
+- N default methods
+- N static methods
 
 **SAM (Single Abstract Method):** The only abstract method in the functional interface.
 
@@ -18,18 +17,18 @@ It can also have:
 @FunctionalInterface
 interface One {
     void m1();
-    void m2(); // ❌ Error
+    void m2(); //  Error
 }
 
 // Compile-time error: No abstract method
 @FunctionalInterface
 interface Two {
-} // ❌ Error
+} //  Error
 
 // Valid Functional Interface
 @FunctionalInterface
 interface Three {
-    void m1(); // ✅ Single abstract method
+    void m1(); //  Single abstract method
 }
 ```
 
@@ -37,8 +36,8 @@ interface Three {
 
 ## 2. Importance and Implementation of Functional Interface
 
-- Enables **functional programming** in Java.  
-- Serves as a target for **lambda expressions**, **method references**, or **anonymous classes**.  
+- Enables **functional programming** in Java.
+- Serves as a target for **lambda expressions**, **method references**, or **anonymous classes**.
 - Makes code **concise** and **readable**.
 
 ---
@@ -69,21 +68,21 @@ Lambda expressions provide a way to **implement a single abstract method** of a 
 
 ## 4. Relation Between Functional Interface and Lambda Expressions
 
-- Lambda expressions can **instantiate a functional interface**.  
+- Lambda expressions can **instantiate a functional interface**.
 - Each lambda expression corresponds to the **implementation of the abstract method** of the functional interface.
 
 ---
 
 ## 5. Functional Programming
 
-- Focuses on **what to do** rather than **how to do it**.  
+- Focuses on **what to do** rather than **how to do it**.
 - Promotes **immutable data** and **stateless functions**.
 
 ---
 
 ## 6. Declarative Programming
 
-- Programming paradigm where we **declare logic** without describing control flow.  
+- Programming paradigm where we **declare logic** without describing control flow.
 - Example: SQL, Java Streams, Lambda expressions.
 
 ---
@@ -124,7 +123,7 @@ package com.training.java8.features;
 public class Camel implements Calculate {
     @Override
     public void printName() {
-        System.out.println("This is Camel class implementation");        
+        System.out.println("This is Camel class implementation");
     }
 }
 ```
@@ -149,7 +148,7 @@ public class Demo {
         Calculate xyz = () -> {
             System.out.println("This is XYZ company calc");
         };
-        
+
         abc.printName();
         xyz.printName();
     }
@@ -157,6 +156,7 @@ public class Demo {
 ```
 
 **Output:**
+
 ```
 This is Camel class implementation
 This is Abc company calc
@@ -221,6 +221,7 @@ public class FunctionalInterfaceWithParamsDemo {
 ```
 
 **Output:**
+
 ```
 Values are: 30,40
 70.0
